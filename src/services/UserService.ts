@@ -16,7 +16,7 @@ class UsersService {
     return user;
   }
 
-  async getUser(name: string, password: string){
+  async login(name: string, password: string){
     const user = await this.userRepository.findOne({where: {name}});
 
     if(user){

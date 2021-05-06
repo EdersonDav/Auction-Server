@@ -21,7 +21,7 @@ class UsersController {
       const {name, password} = req.body;
       const user = new UsersService();
       try {
-        const userResponse = await user.getUser(name, password)
+        const userResponse = await user.login(name, password)
 
         return res.status(200).json(userResponse)
       } catch (error) {

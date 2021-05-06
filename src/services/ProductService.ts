@@ -47,13 +47,14 @@ class ProductsService {
   }
 
   async getById(id: string){
-    const product = await this.ProductRepository.find({where:{id}});
+    const product = await this.ProductRepository.findOne({where:{id}});
     if(product){
       return product;
     }
 
     throw new Error ('Product not found')
   }
+
 }
 
 export {ProductsService}
