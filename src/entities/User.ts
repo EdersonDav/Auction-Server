@@ -13,9 +13,17 @@ class User {
   @Column()
   password: string;
 
-  constructor(name: string, password: string){
-    this.name = name;
+  @Column()
+  balance: number;
+
+  @Column()
+  balanceInitial: number;
+
+  constructor(name: string, password: string, balance: number, balanceInitial:number){
     this.password = password;
+    this.balanceInitial = 0;
+    this.balance = 0;
+    this.name = name;
     this.id = v4();
   }
 

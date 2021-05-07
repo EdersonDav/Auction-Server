@@ -9,8 +9,9 @@ class UsersController {
       try {
         await user.create('user1', 'user1')
         await user.create('user2', 'user2')
+        await user.create('user3', 'user3')
         for(let i = 0; i<= 20; i++){
-          await product.create(`Product-${i}`, `Description product number ${i}`, new Date(`2021-10-${i+1}`), Number(((i+1) * 100).toFixed(2)) )
+          await product.create(`Product-${i}`, `Description product number ${i}`, new Date(`2021-10-${i+1}`), Number(((i+1) * 10).toFixed(2)) )
         }
         return res.status(200).json({message: 'ok'});
       } catch (error) {

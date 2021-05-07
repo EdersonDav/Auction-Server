@@ -8,17 +8,27 @@ export class Users1620253037418 implements MigrationInterface {
                 name: "users",
                 columns: [
                     {
-                        name: "id",
-                        type: "uuid",
-                        isPrimary: true
+                      name: "id",
+                      type: "uuid",
+                      isPrimary: true
                     },
                     {
-                        name: "name",
-                        type: "varchar",
+                      name: "name",
+                      type: "varchar",
                     },
                     {
-                        name: "password",
-                        type: "varchar"
+                      name: "password",
+                      type: "varchar"
+                    },
+                    {
+                      name: "balanceInitial",
+                      type: "decimal",
+                      default: 0
+                    },
+                    {
+                      name: "balance",
+                      type: "decimal",
+                      default: 0
                     }
                 ]
             })
