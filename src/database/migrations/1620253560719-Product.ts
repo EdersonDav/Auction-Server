@@ -27,7 +27,12 @@ export class Product1620253560719 implements MigrationInterface {
                     {
                         name:'expiredTime',
                         type:'date'
-                    }
+                    },
+                    {
+                      name: "lastBidPrice",
+                      type: "decimal",
+                      isNullable: true,
+                    },
                 ]
             })
         );

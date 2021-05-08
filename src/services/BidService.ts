@@ -36,6 +36,7 @@ class BidService {
 
     const bid = this.bidRepository.create({product_id, user_id, price  });
     await this.bidRepository.save(bid);
+    await product.setLastBid(product_id, price)
     return bid;
   }
 

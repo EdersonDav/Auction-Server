@@ -14,6 +14,9 @@ class Product {
   price: number;
 
   @Column()
+  lastBidPrice: number;
+
+  @Column()
   description: string;
 
   @Column()
@@ -25,7 +28,7 @@ class Product {
     this.id = v4();
     this.price = price;
     this.expiredTime = expiredTime;
-
+    this.lastBidPrice = 0;
   }
 
 }

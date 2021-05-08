@@ -37,11 +37,11 @@ class BidAutomaticService {
     for(let bid of allBids){
       const user = await userService.getUser(bid.user_id);
       lastBidInitial ++
-      if(user.balance <= lastBidInitial - 1){
+      if(user.balanceInitial <= lastBidInitial - 1){
        await userService.rollbackAmount(user.id)
       }else if(lastBid.user_id !== user.id){
         await bidService.create(user.id, lastBid.product_id, lastBidInitial);
-        await userService.setAmount(user.id, user.balance - lastBidInitial);
+        await userService.setAmount(user.id, user.balanceInitial - lastBidInitial);
       }else if(lastBid.user_id === user.id){
         return
       }

@@ -55,6 +55,15 @@ class ProductsService {
     throw new Error ('Product not found')
   }
 
+  async setLastBid(id: string, value: number){
+    const product = await this.ProductRepository.findOne({where:{id}});
+    if(product){
+
+      product.lastBidPrice = value;
+      await this.ProductRepository.save(product);
+    }
+  }
+
 }
 
 export {ProductsService}
