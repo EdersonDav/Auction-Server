@@ -1,7 +1,5 @@
 # Back-End Auction
 
-> Product auction
-
 [![Author](https://img.shields.io/badge/author-EdersonDav-000000?style=flat-square)](https://github.com/EdersonDav)
 
 # 📌 Index
